@@ -6,7 +6,7 @@
 /*   By: lmakynen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 15:42:29 by lmakynen          #+#    #+#             */
-/*   Updated: 2020/09/06 18:30:50 by lmakynen         ###   ########.fr       */
+/*   Updated: 2020/09/06 18:53:24 by lmakynen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int				main(int argc, char **argv)
 		if (!(fd = open(argv[1], O_RDONLY)))
 			errors(1);
 		read_file(fd, &env);
-//		make_window(&env);
+		create_window(&env);
 		return (0);
 	}
 	ft_putstr("usage: ./fdf <file>\n");
