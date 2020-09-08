@@ -6,7 +6,7 @@
 /*   By: lmakynen <lmakynen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 16:09:52 by lmakynen          #+#    #+#             */
-/*   Updated: 2020/09/04 19:30:27 by lmakynen         ###   ########.fr       */
+/*   Updated: 2020/09/08 16:19:42 by lmakynen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ int					ft_isspace(int c);
 int					ft_isblank(int c);
 int					ft_wordcount(char *str, char c);
 int					get_next_line(const int fd, char **line);
+int					ft_abs(int i);
 
 #endif

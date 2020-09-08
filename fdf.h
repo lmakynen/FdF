@@ -6,7 +6,7 @@
 /*   By: lmakynen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 16:43:19 by lmakynen          #+#    #+#             */
-/*   Updated: 2020/09/06 20:43:31 by lmakynen         ###   ########.fr       */
+/*   Updated: 2020/09/08 18:10:25 by lmakynen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct		s_env
 	void			*win;
 	int				**map;
 	int				alt;
-	int				projection;
+	char			projection;
 	unsigned long	color;
 	int				scale;
 	int				start_x;
@@ -37,6 +37,8 @@ typedef struct		s_env
 	int				y1;
 	int				dx;
 	int				dy;
+	int				z0;
+	int				z1;
 	int				err;
 	int				err2;
 	int				dir_x;

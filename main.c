@@ -6,11 +6,18 @@
 /*   By: lmakynen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 15:42:29 by lmakynen          #+#    #+#             */
-/*   Updated: 2020/09/06 18:53:24 by lmakynen         ###   ########.fr       */
+/*   Updated: 2020/09/08 20:29:48 by lmakynen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+/*
+** Opens the map file and fills in the struct a bit. After that
+** the program counts the rows (max y) using get_next_line.
+** Then it sends the map file and struct forward. This file also
+** contains the error messages. Quite simple :)
+*/
 
 int				errors(int i)
 {
@@ -20,13 +27,15 @@ int				errors(int i)
 		ft_putstr_fd("Error with malloc\n", 2);
 	else if (i == 3)
 		ft_putstr_fd("Invalid map\n", 2);
-	exit(-1);
+	else if (i == 4)
+		ft_putstr_fd("Invalid map, doesn't have any content\n", 2);
+	exit(1);
 }
 
 void			make_struct(t_env *env)
 {
-	env->start_x = 300;
-	env->start_y = 200;
+	env->start_x = 400;
+	env->start_y = 400;
 	env->color = 0xFFFFFF;
 	env->projection = 'I';
 	env->alt = 1;
@@ -46,6 +55,8 @@ void			count_rows(int fd, t_env *env)
 		rows++;
 	}
 	env->max_y = rows;
+	if (rows == 0)
+		errors(4);
 }
 
 int				main(int argc, char **argv)

@@ -6,7 +6,7 @@
 #    By: lmakynen <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/06 17:17:29 by lmakynen          #+#    #+#              #
-#    Updated: 2020/09/06 19:54:34 by lmakynen         ###   ########.fr        #
+#    Updated: 2020/09/08 15:41:02 by lmakynen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fdf
 
 INCLUDES = libft/ -I /usr/local/include -L libft/ -lft -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit 
 
-SOURCE = main.c create_map.c create_window.c draw_map.c
+SOURCE = main.c create_map.c create_window.c draw_map.c 
 
 OFILES = $(subst .c,.o,$(SOURCE))
 
