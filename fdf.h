@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmakynen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lmakynen <lmakynen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 16:43:19 by lmakynen          #+#    #+#             */
-/*   Updated: 2020/09/08 18:10:25 by lmakynen         ###   ########.fr       */
+/*   Updated: 2020/09/11 21:37:58 by lmakynen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@ typedef struct		s_temp
 int					main(int argc, char **argv);
 int					errors(int i);
 int					count_columns(char *line, t_env *env, int row);
+int					get_events(int keycode, t_env *env);
+int					arrlen(char **arr);
+int					destroy(t_env *env);
+int					get_events(int keycode, t_env *env);
 
 void				count_rows(int fd, t_env *env);
 void				make_struct(t_env *env);
@@ -64,5 +68,12 @@ void				create_window(t_env *env);
 void				put_info(t_env *env);
 void				check_coordinates(t_env *env, int x, int y);
 void				count_with_coordinates(t_env *env, t_temp temp);
+void				bresenhams(t_env *env, t_temp *temp);
+void				isometric(t_env *env);
+void				start_drawing(t_env *env);
+void				change_projection(int keycode, t_env *env);
+void				change_zoom(int keycode, t_env *env);
+void				change_color(int keycode, t_env *env);
+void				change_start(int keycode, t_env *env);
 
 #endif

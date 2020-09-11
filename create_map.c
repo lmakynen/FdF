@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmakynen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lmakynen <lmakynen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 18:35:32 by lmakynen          #+#    #+#             */
-/*   Updated: 2020/09/08 20:24:33 by lmakynen         ###   ########.fr       */
+/*   Updated: 2020/09/11 20:43:59 by lmakynen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,5 @@ void		read_file(int fd, t_env *env)
 		create_map(line, row, env);
 		row++;
 	}
+	free(line);
 }

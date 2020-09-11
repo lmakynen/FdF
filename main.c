@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lmakynen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lmakynen <lmakynen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/04 15:42:29 by lmakynen          #+#    #+#             */
-/*   Updated: 2020/09/08 20:29:48 by lmakynen         ###   ########.fr       */
+/*   Updated: 2020/09/11 20:19:22 by lmakynen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,11 @@ void			count_rows(int fd, t_env *env)
 	rows = 0;
 	while ((get_next_line(fd, &line)) == 1)
 	{
-		free(line);
 		rows++;
+		free(line);
 	}
 	env->max_y = rows;
+	free(line);
 	if (rows == 0)
 		errors(4);
 }
